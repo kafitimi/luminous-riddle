@@ -22,7 +22,7 @@ jobs:
           python-version: '3.13'
 
       - name: Install required packages
-        run: pip install -r glowing-enigma/requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Run build script
         run: python ./luminous-riddle/main.py
