@@ -6,11 +6,6 @@ jobs:
   compile-subjects:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout current repository
-        uses: actions/checkout@v4
-        with:
-          path: 'luminous-riddle'
-
       - name: Checkout glowing enigma
         uses: actions/checkout@v4
         with:
@@ -22,7 +17,7 @@ jobs:
           python-version: '3.13'
 
       - name: Install required packages
-        run: pip install -r requirements.txt
+        run: pip install -r glowing-enigma/requirements.txt
 
       - name: Run build script
-        run: python ./luminous-riddle/main.py
+        run: python main.py
