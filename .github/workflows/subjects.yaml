@@ -8,12 +8,13 @@ jobs:
     steps:
       - name: Checkout current repository
         uses: actions/checkout@v4
+        with:
+          path: 'luminous-riddle'
 
       - name: Checkout glowing enigma
         uses: actions/checkout@v4
         with:
           repository: kafitimi/glowing-enigma
-          path: 'glowing-enigma'
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -24,4 +25,4 @@ jobs:
         run: pip install -r glowing-enigma/requirements.txt
 
       - name: Run build script
-        run: python main.py
+        run: python ./luminous-riddle/main.py

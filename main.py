@@ -1,14 +1,17 @@
+from os import system
+
 from yaml import Loader, load
 
-with open('matching.yaml', mode='rt', encoding='utf-8') as file:
+riddle = './luminous-riddle'
+with open(riddle + '/matching.yaml', mode='rt', encoding='utf-8') as file:
     matching = load(file, Loader=Loader)
 
 for course, plans in matching.items():
     for plan in plans:
         parts = (
             'python',
-            './glowing-enigma/get_rpd.py',
-            f'--plan ./plans/{plan}',
-            f'--course ./courses/{course}.yaml',
+            './get_rpd.py',
+            f'--plan {riddle}/plans/{plan}',
+            f'--course {riddle}/courses/{course}.yaml',
         )
-        print(' '.join(parts))
+        system(' '.join(parts))
