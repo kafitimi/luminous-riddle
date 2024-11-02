@@ -12,8 +12,8 @@ for course, plans in matching.items():
         parts = (
             'python',
             './get_rpd.py',
-            f'--plan {riddle}/plans/{plan}',
-            f'--course {riddle}/courses/{course}.yaml',
+            f'{riddle}/plans/{plan}',
+            f'{riddle}/courses/{course}.yaml',
         )
         retval += system(' '.join(parts))
 
