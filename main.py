@@ -6,6 +6,7 @@ riddle = './luminous-riddle'
 with open(riddle + '/matching.yaml', mode='rt', encoding='utf-8') as file:
     matching = load(file, Loader=Loader)
 
+retval = 0
 for course, plans in matching.items():
     for plan in plans:
         parts = (
@@ -14,4 +15,6 @@ for course, plans in matching.items():
             f'--plan {riddle}/plans/{plan}',
             f'--course {riddle}/courses/{course}.yaml',
         )
-        system(' '.join(parts))
+        retval += system(' '.join(parts))
+
+exit(retval)
