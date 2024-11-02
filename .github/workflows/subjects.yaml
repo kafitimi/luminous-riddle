@@ -13,7 +13,8 @@ jobs:
 
       - name: Checkout glowing enigma
         uses: actions/checkout@v4
-        path: luminous-riddle
+        with:
+          path: luminous-riddle
 
       - name: Setup Python
         uses: actions/setup-python@v5
