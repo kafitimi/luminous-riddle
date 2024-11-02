@@ -8,10 +8,15 @@ jobs:
     steps:
       - name: Checkout glowing enigma
         uses: actions/checkout@v4
-      - run: pwd
-      - run: ls -la
+
+      - name: Checkout glowing enigma
+        uses: actions/checkout@v4
+        with:
+          repository: kafitimi/glowing-enigma
+          path: ..
+
       - run: ls -la ..
-      - run: ls -la ../..
+      - run: ls -la ../glowing-enigma
       # - name: Checkout glowing enigma
       #   uses: actions/checkout@v4
       #   with:
