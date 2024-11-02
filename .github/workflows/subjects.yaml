@@ -8,27 +8,22 @@ jobs:
     steps:
       - name: Checkout glowing enigma
         uses: actions/checkout@v4
+        with:
+          repository: kafitimi/glowing-enigma
 
       - name: Checkout glowing enigma
         uses: actions/checkout@v4
+        path: luminous-riddle
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          repository: kafitimi/glowing-enigma
-          path: ..
+          python-version: '3.13'
 
-      - run: ls -la ..
-      - run: ls -la ../glowing-enigma
-      # - name: Checkout glowing enigma
-      #   uses: actions/checkout@v4
-      #   with:
-      #     repository: kafitimi/glowing-enigma
+      - name: Install required packages
+        run: pip install -r requirements.txt
 
-      # - name: Setup Python
-      #   uses: actions/setup-python@v5
-      #   with:
-      #     python-version: '3.13'
-
-      # - name: Install required packages
-      #   run: pip install -r glowing-enigma/requirements.txt
+      - run: ls -la luminuos-riddle
 
       # - name: Run build script
       #   run: python main.py
