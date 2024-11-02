@@ -6,18 +6,20 @@ jobs:
   compile-subjects:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout glowing enigma
-        uses: actions/checkout@v4
-        with:
-          repository: kafitimi/glowing-enigma
+      - run: pwd
+      - run: ls -la
+      # - name: Checkout glowing enigma
+      #   uses: actions/checkout@v4
+      #   with:
+      #     repository: kafitimi/glowing-enigma
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.13'
+      # - name: Setup Python
+      #   uses: actions/setup-python@v5
+      #   with:
+      #     python-version: '3.13'
 
-      - name: Install required packages
-        run: pip install -r glowing-enigma/requirements.txt
+      # - name: Install required packages
+      #   run: pip install -r glowing-enigma/requirements.txt
 
-      - name: Run build script
-        run: python main.py
+      # - name: Run build script
+      #   run: python main.py
