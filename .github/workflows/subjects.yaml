@@ -6,8 +6,12 @@ jobs:
   compile-subjects:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout glowing enigma
+        uses: actions/checkout@v4
       - run: pwd
       - run: ls -la
+      - run: ls -la ..
+      - run: ls -la ../..
       # - name: Checkout glowing enigma
       #   uses: actions/checkout@v4
       #   with:
