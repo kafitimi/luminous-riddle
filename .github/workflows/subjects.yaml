@@ -11,7 +11,7 @@ jobs:
         with:
           repository: kafitimi/glowing-enigma
 
-      - name: Checkout glowing enigma
+      - name: Checkout luminous riddle
         uses: actions/checkout@v4
         with:
           path: luminous-riddle
@@ -26,6 +26,7 @@ jobs:
 
       - run: pwd
       - run: ls -la
+      - run: ls -la luminous-riddle
 
-      # - name: Run build script
-      #   run: python main.py
+      - name: Run build script
+        run: python luminous-riddle/main.py
