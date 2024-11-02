@@ -1,6 +1,7 @@
 from yaml import Loader, load
 
-matching = load('matching.yaml', Loader=Loader)
+with open('matching.yaml', mode='rt', encoding='utf-8') as file:
+    matching = load(file, Loader=Loader)
 
 for course, plans in matching.items():
     for plan in plans:
