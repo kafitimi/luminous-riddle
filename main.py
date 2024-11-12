@@ -18,6 +18,7 @@ for plan in glob(f'./{riddle}/plans/*.plx'):
             f'python ./get_rpd.py {plan} '
             f'{riddle}/courses/{course}.yaml'
         )
-    system(f'ls -lah')
+
+system(f'ls -lah {riddle}/courses')
 
 exit(retval)
