@@ -1,5 +1,5 @@
 from glob import glob
-from os import listdir, system
+from os import system
 
 from yaml import Loader, load
 
@@ -9,10 +9,15 @@ with open(riddle + '/matching.yaml', mode='rt', encoding='utf-8') as file:
 
 retval = 0
 
-for plan in glob('./{riddle}/plans/*.plx'):
+for plan in glob(f'./{riddle}/plans/*.plx'):
     retval += system(f'python ./get_matrix.py {plan}')
 
+system('pwd')
 system('ls -la')
+print(f'./{riddle}')
+system(f'ls -la ./{riddle}')
+print(f'./{riddle}/plans')
+system(f'ls -la ./{riddle}/plans')
 
 for course, plans in matching.items():
     for plan in plans:
