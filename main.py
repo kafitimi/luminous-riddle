@@ -12,13 +12,12 @@ retval = 0
 for plan in glob(f'./{riddle}/plans/*.plx'):
     retval += system(f'python ./get_matrix.py {plan}')
     for course, plans in matching.items():
-        parts = (
-            'python',
-            './get_rpd.py',
-            f'{riddle}/plans/{plan}.plx',
-            f'{riddle}/courses/{course}.yaml',
+        if plan not in plans:
+            continue
+        retval += system(
+            f'python ./get_rpd.py {plan} '
+            f'{riddle}/courses/{course}.yaml'
         )
-        retval += system(' '.join(parts))
     system(f'ls -lah')
 
 exit(retval)
