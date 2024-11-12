@@ -4,6 +4,7 @@ on:
         - main
 jobs:
   compile-subjects:
+    name: Компиляция матриц компетенций и РПД
     runs-on: ubuntu-latest
     permissions:
       contents: write

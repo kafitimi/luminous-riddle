@@ -25,8 +25,8 @@ for plan in glob(f'./{riddle}/plans/*.plx'):
             f'{riddle}/courses/{course}.yaml '
             f'-o ./{plan_name[:-4]}_{course}.docx'
         )
-    system('zip {plan_name}.zip {plan_name}.csv *.docx')
-    system('rm {plan_name}.csv *.docx')
+    system(f'zip {plan_name}.zip {plan_name}.csv *.docx')
+    system(f'rm {plan_name}.csv *.docx')
 
 system(f'ls -lah {riddle}/courses')
 
