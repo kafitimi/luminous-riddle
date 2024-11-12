@@ -12,6 +12,8 @@ retval = 0
 for plan in glob('./{riddle}/plans/*.plx'):
     retval += system(f'python ./get_matrix.py {plan}')
 
+system('ls -la')
+
 for course, plans in matching.items():
     for plan in plans:
         parts = (

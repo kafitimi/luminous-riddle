@@ -28,3 +28,9 @@ jobs:
 
       - name: Run build script
         run: python luminous-riddle/main.py
+
+      - name: Upload matrices
+        uses: actions/upload-artifact@v4
+        with:
+          name: Matrices
+          path: ./luminous-riddle/plans/*.txt
