@@ -11,16 +11,7 @@ retval = 0
 
 for plan in glob(f'./{riddle}/plans/*.plx'):
     retval += system(f'python ./get_matrix.py {plan}')
-
-system('pwd')
-system('ls -la')
-print(f'./{riddle}')
-system(f'ls -la ./{riddle}')
-print(f'./{riddle}/plans')
-system(f'ls -la ./{riddle}/plans')
-
-for course, plans in matching.items():
-    for plan in plans:
+    for course, plans in matching.items():
         parts = (
             'python',
             './get_rpd.py',
@@ -28,5 +19,6 @@ for course, plans in matching.items():
             f'{riddle}/courses/{course}.yaml',
         )
         retval += system(' '.join(parts))
+    system(f'ls -lah')
 
 exit(retval)
